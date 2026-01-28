@@ -17,5 +17,5 @@ Per oggi, dedichiamoci alla creazione del nostro portfolio, mettendo su un'app L
 - [X] Prepariamo un Resource Controller (Admin/ProjectController) incaricato di gestire tutte le operazioni CRUD sui progetti. 
 - [X] Soffermiamoci per oggi solo sulla logica delle azioni di index e show. 
 - [X] Creiamo le rotte per i nostri progetti e 
-- [ ] prepariamo un layout per mostrare i nostri progetti in tabella nella rotta index.
-- [ ] Inventiamo anche uno stile per la pagina di show, che dovrà mostrare un singolo progetto. 
+- [X] prepariamo un layout per mostrare i nostri progetti in tabella nella rotta index.
+- [X] Inventiamo anche uno stile per la pagina di show, che dovrà mostrare un singolo progetto. 
