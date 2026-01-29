@@ -19,3 +19,10 @@ Per oggi, dedichiamoci alla creazione del nostro portfolio, mettendo su un'app L
 - [X] Creiamo le rotte per i nostri progetti e 
 - [X] prepariamo un layout per mostrare i nostri progetti in tabella nella rotta index.
 - [X] Inventiamo anche uno stile per la pagina di show, che dovrà mostrare un singolo progetto. 
+
+## Todos
+- [X] Prepariamo le rotte per le pagine di creazione e modifica dei progetti
+- [] All'interno delle pagine, prepariamo i rispettivi form
+- [] Nella pagina di dettaglio del progetto, mostriamo la tipologia a cui il progetto appartiene (Web Design, Graphic Design, Back End...)
+- [] Nel controller, inseriamo la logica per il salvataggio di un nuovo progetto, per la sua modifica e per l'eliminazione
+- [] Nella tabella della pagina index, dovremo inserire i pulsanti su ciascuna riga, per permettere l'eliminazione e la modifica del singolo progetto. Inoltre, potremmo avere un singolo tasto in cima che ci porti alla pagina di creazione del progetto.
