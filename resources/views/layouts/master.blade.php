@@ -8,10 +8,10 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-    @include('admin.partials.header')
+    @include('partials.header')
     <div class="container my-4">
         @yield('content')
     </div>
-    @include('admin.partials.footer')
+    @include('partials.footer')
 </body>
 </html>
