@@ -20,7 +20,7 @@
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Descrizione</label>
-            <textarea class="form-control" id="description" name="description">{{ $project->description }}</textarea>
+            <textarea class="form-control" id="description" rows="6" name="description">{{ $project->description }}</textarea>
         </div>
         <button type="submit" class="btn btn-primary">Salva</button>
     </form>
