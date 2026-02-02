@@ -35,7 +35,7 @@ Per oggi, dedichiamoci alla creazione del nostro portfolio, mettendo su un'app L
 - [X] Creiamo il modello Type, con relativa migrazione ed un seeder per inserire i types nel Database
 - [X] Creiamo anche la migration per modificare la tabella projects, che dovrà ora contenere la chiave esterna type_id
 - [X] Nei modelli Type e Project, aggiungiamo i metodi per definire la relazione one-to-many
-- [] Nella pagina di dettaglio del progetto, mostriamo il Type a cui il progetto appartiene. Volendo, potremmo anche aggiungere una colonna che indica il tipo nella tabella della pagina Index dei progetti.
+- [X] Nella pagina di dettaglio del progetto, mostriamo il Type a cui il progetto appartiene. Volendo, potremmo anche aggiungere una colonna che indica il tipo nella tabella della pagina Index dei progetti.
 - [] Nei form di creazione e modifica dei progetti, dobbiamo permettere di associare un type al progetto stesso.
 - [] Gestiamo inoltre il salvataggio di questa associazione progetto-tipologia nel controller ProjectController
 - [] Aggiungere le operazioni CRUD anche per il model Type, in modo da gestire le tipologie di progetto direttamente dal pannello di amministrazione. 

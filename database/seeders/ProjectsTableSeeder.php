@@ -20,6 +20,7 @@ class ProjectsTableSeeder extends Seeder
             $newProject->customer = $faker->company();
             $newProject->description = $faker->paragraphs(3, true);
             $newProject->cover_image = $faker->imageUrl(640, 480, 'projects', true);
+            $newProject->type_id = $faker->numberBetween(1, 6);
             $newProject->save();
         }
     }
