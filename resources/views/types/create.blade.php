@@ -6,8 +6,8 @@
     <form class="form-control" action="{{ route('types.store') }}" method="POST">
         @csrf
         <div class="mb-3">
-            <label for="title" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="title" name="title">
+            <label for="name" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="name" name="name">
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Descrizione</label>

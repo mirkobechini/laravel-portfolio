@@ -30,7 +30,12 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-       
+        $data = $request->all();
+        $newType = new Type();
+        $newType->name = $data['name'];
+        $newType->description = $data['description'];
+        $newType->save();
+        return redirect()->route("types.index");
     }
 
     /**
@@ -44,24 +49,15 @@ class TypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Type $type)
-    {
-        
-    }
+    public function edit(Type $type) {}
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Type $type)
-    {
-        
-    }
+    public function update(Request $request, Type $type) {}
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Type $type)
-    {
-        
-    }
+    public function destroy(Type $type) {}
 }
