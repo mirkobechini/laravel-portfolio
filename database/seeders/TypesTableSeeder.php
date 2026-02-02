@@ -17,7 +17,7 @@ class TypesTableSeeder extends Seeder
         $types = [
             [
                 'name' => '',
-                'description' => ''
+                'description' => 'Default type for uncategorized projects.'
             ],
             [
                 'name' => 'Graphic Design',
