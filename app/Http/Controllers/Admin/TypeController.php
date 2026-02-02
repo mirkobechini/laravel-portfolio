@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Type;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class TypeController extends Controller
 {
@@ -49,14 +50,16 @@ class TypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Type $type) {
+    public function edit(Type $type)
+    {
         return view("types.edit", compact("type"));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Type $type) {
+    public function update(Request $request, Type $type)
+    {
         $data = $request->all();
         $type->name = $data['name'];
         $type->description = $data['description'];
@@ -67,5 +70,12 @@ class TypeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Type $type) {}
+    public function destroy(Type $type)
+    {
+        DB::table('projects')
+            ->where('type_id', $type->id)
+            ->update(['type_id' => Type::first()->id]);
+        $type->delete();
+        return redirect()->route("types.index");
+    }
 }
