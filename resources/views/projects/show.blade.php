@@ -8,6 +8,8 @@
         <div class="card">
             <div class="card-header">
                 <h3 class="card-title">Customer: {{ $project->customer }}</h3>
+                <img src="{{ $project->cover_image }}" alt="{{ $project->title }}" class="img-fluid my-3"
+                    style="max-height: 400px; object-fit: cover;">
                 <p class="card-subtitle">{{$project->description}}</p>
             </div>
         </div>
