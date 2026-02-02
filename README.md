@@ -38,4 +38,4 @@ Per oggi, dedichiamoci alla creazione del nostro portfolio, mettendo su un'app L
 - [X] Nella pagina di dettaglio del progetto, mostriamo il Type a cui il progetto appartiene. Volendo, potremmo anche aggiungere una colonna che indica il tipo nella tabella della pagina Index dei progetti.
 - [X] Nei form di creazione e modifica dei progetti, dobbiamo permettere di associare un type al progetto stesso.
 - [X] Gestiamo inoltre il salvataggio di questa associazione progetto-tipologia nel controller ProjectController
-- [] Aggiungere le operazioni CRUD anche per il model Type, in modo da gestire le tipologie di progetto direttamente dal pannello di amministrazione. 
+- [X] Aggiungere le operazioni CRUD anche per il model Type, in modo da gestire le tipologie di progetto direttamente dal pannello di amministrazione. 

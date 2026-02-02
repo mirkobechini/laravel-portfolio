@@ -7,10 +7,15 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav d-flex justify-content-between w-100">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{ route('projects.index') }}">Home</a>
-                    </li>
+                <div class="navbar-nav d-flex justify-content-between w-100">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{ route('projects.index') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="{{ route('types.index') }}">Types</a>
+                        </li>
+                    </ul>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -22,7 +27,7 @@
                             <li><a class="dropdown-item" href="#">Log out</a></li>
                         </ul>
                     </li>
-                </ul>
+                </div>
             </div>
         </div>
     </nav>
