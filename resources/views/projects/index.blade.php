@@ -5,7 +5,6 @@
     <p>Use the navigation bar to manage your portfolio.</p>
 
     <a class="btn btn-success my-4" href="{{ route('projects.create') }}">Create New Project</a>
-    <a class="btn btn-warning my-4" href="{{ route('types.index') }}">Manage Types</a>
 
     @foreach ($projects as $project)
         <div class="card mb-3">
