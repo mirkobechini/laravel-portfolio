@@ -14,7 +14,7 @@
                     
                 <div class="mb-3">Tecnologie:
                     @forelse ($project->technologies as $technology)
-                    <span class="badge btn bg-warning">{{$technology->name}}</span>
+                    <span class="badge bg-warning">{{$technology->name}}</span>
                     @empty
                         Nessuna
                     @endforelse
