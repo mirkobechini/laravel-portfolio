@@ -30,7 +30,7 @@ Per oggi, dedichiamoci alla creazione del nostro portfolio, mettendo su un'app L
 - [X] Nella tabella della pagina index, dovremo inserire i pulsanti su ciascuna riga, per permettere l'eliminazione e la modifica del singolo progetto. 
 - [X] Inoltre, potremmo avere un singolo tasto in cima che ci porti alla pagina di creazione del progetto.
 
-# Relazioni (Uno a uno)
+# Relazioni (Uno a uno/Uno a molti)
 ## Todos
 - [X] Creiamo il modello Type, con relativa migrazione ed un seeder per inserire i types nel Database
 - [X] Creiamo anche la migration per modificare la tabella projects, che dovrà ora contenere la chiave esterna type_id
@@ -39,3 +39,14 @@ Per oggi, dedichiamoci alla creazione del nostro portfolio, mettendo su un'app L
 - [X] Nei form di creazione e modifica dei progetti, dobbiamo permettere di associare un type al progetto stesso.
 - [X] Gestiamo inoltre il salvataggio di questa associazione progetto-tipologia nel controller ProjectController
 - [X] Aggiungere le operazioni CRUD anche per il model Type, in modo da gestire le tipologie di progetto direttamente dal pannello di amministrazione. 
+
+# Relazioni (Molti a molti)
+## Todos
+- [X] Creiamo il modello Technology, la migration per la sua tabella ed un seeder.
+- [] Creiamo anche la migration per modificare la tabella projects, che dovrà ora contenere la chiave esterna type_id
+- [] Sarà inoltre necessario creare la tabella pivot project_technology, per gestire la relazione molti a molti
+- [] Nei modelli Technology e Project, dovremo aggiungere i metodi corretti per rappresentare la relazione molti a molti
+- [] Nei form di creazione e modifica dei progetti, dobbiamo permettere di associare una o più tecnologie al progetto stesso. Gestiamo inoltre il salvataggio di queste associazioni progetto-tecnologie nel controller ProjectController
+- [] All'interno della pagina di dettaglio di un modello, dovremo visualizzare in qualche modo la lista delle tecnologie utilizzate nel singolo progetto.
+- [] Aggiungere le operazioni CRUD anche per il modello Technology, in modo da gestire le tipologie di progetto direttamente dal pannello di amministrazione.
+- [] Potremmo modificare i seeder in modo tale da creare già le associazioni tra tecnologia e progetti quando viene popoliamo il database.
