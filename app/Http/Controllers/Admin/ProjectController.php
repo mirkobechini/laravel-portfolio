@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Project;
+use App\Models\Technology;
 use App\Models\Type;
 use Illuminate\Http\Request;
 
@@ -24,7 +25,8 @@ class ProjectController extends Controller
     public function create()
     {
         $types = Type::all();
-        return view("projects.create", compact("types"));
+        $technologies = Technology::all();
+        return view("projects.create", compact("types", "technologies"));
     }
 
     /**
@@ -32,15 +34,22 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+
         $data = $request->all();
-        $project = new Project();
-        $project->title = $data["title"];
-        $project->customer = $data["customer"];
-        $project->cover_image = $data["cover_image"];
-        $project->description = $data["description"];
-        $project->type_id = $data["type_id"];
-        $project->save();
-        return redirect()->route("projects.show", $project->id);
+        $newProject = new Project();
+        $newProject->title = $data["title"];
+        $newProject->customer = $data["customer"];
+        $newProject->cover_image = $data["cover_image"];
+        $newProject->description = $data["description"];
+        $newProject->type_id = $data["type_id"];
+        $newProject->save();
+        if ($request->has("technologies")) {
+
+            $newProject->technologies()->sync($data['technologies']);
+        } else {
+            $newProject->technologies()->detach();
+        }
+        return redirect()->route("projects.show", $newProject->id);
     }
 
     /**
@@ -57,7 +66,8 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $types = Type::all();
-        return view("projects.edit", compact("project", "types"));
+        $technologies = Technology::all();
+        return view("projects.edit", compact("project", "types", "technologies"));
     }
 
     /**
@@ -72,6 +82,11 @@ class ProjectController extends Controller
         $project->description = $data["description"];
         $project->type_id = $data["type_id"];
         $project->update();
+        if ($request->has("technologies")) {
+            $project->technologies()->sync($data['technologies']);
+        } else {
+            $project->technologies()->detach();
+        }
         return redirect()->route("projects.show", $project->id);
     }
 

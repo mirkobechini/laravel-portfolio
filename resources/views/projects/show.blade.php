@@ -8,9 +8,17 @@
         <div class="card">
             <div class="card-header position-relative">
                 <span class=" position-absolute top-0 end-0 mt-2 me-2 badge bg-primary">{{ $project->type->name }}</span>
-                <h3 class="card-title">Customer: {{ $project->customer }}</h3>
                 <img src="{{ $project->cover_image }}" alt="{{ $project->title }}" class="img-fluid my-3"
                     style="max-height: 400px; object-fit: cover;">
+                <h3 class="card-title">Customer: {{ $project->customer }}</h3>
+                    
+                <div class="mb-3">Tecnologie:
+                    @forelse ($project->technologies as $technology)
+                    <span class="badge btn bg-warning">{{$technology->name}}</span>
+                    @empty
+                        Nessuna
+                    @endforelse
+                </div>
                 <p class="card-subtitle">{{$project->description}}</p>
             </div>
         </div>
