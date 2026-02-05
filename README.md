@@ -53,7 +53,7 @@ Per oggi, dedichiamoci alla creazione del nostro portfolio, mettendo su un'app L
 
 # API
 ## Todos
-- [] Innanzitutto, pubblichiamo il file routes/api.php col comando php artisan route:publish api
-- [] Creiamo poi un controller dedicato alle API dei progetti, col comando php artisan make:controller Api/ProjectController e inseriamo all'interno i metodi per restituire l'elenco dei progetti ed un singolo progetto, in formato JSON
-- [] Testiamo su Postman le nostre due rotte per verificare che restituiscano correttamente i JSON che abbiamo predisposto
-- [] Predisponiamo le configurazioni CORS di Laravel nel file cors.php per autorizzare l'applicazione esterna ad effettuare delle chiamate al nostro backend.
+- [X] Innanzitutto, pubblichiamo il file routes/api.php col comando php artisan route:publish api
+- [X] Creiamo poi un controller dedicato alle API dei progetti, col comando php artisan make:controller Api/ProjectController e inseriamo all'interno i metodi per restituire l'elenco dei progetti ed un singolo progetto, in formato JSON
+- [X] Testiamo su Postman le nostre due rotte per verificare che restituiscano correttamente i JSON che abbiamo predisposto
+- [X] Predisponiamo le configurazioni CORS di Laravel nel file cors.php per autorizzare l'applicazione esterna ad effettuare delle chiamate al nostro backend.
