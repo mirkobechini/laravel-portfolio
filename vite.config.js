@@ -19,5 +19,13 @@ export default defineConfig({
             '~bootstrap': path.resolve(__dirname, 'node_modules/bootstrap'),
             '~resources': '/resources/'
         }
+    },
+    css: {
+        preprocessorOptions: {
+            scss: {
+                api: 'modern-compiler', // or "modern"
+                silenceDeprecations: ['import', 'global-builtin', 'color-functions', 'if-function']
+            }
+        }
     }
 });
