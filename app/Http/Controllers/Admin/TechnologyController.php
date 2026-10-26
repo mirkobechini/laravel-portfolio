@@ -15,7 +15,8 @@ class TechnologyController extends Controller
     public function index()
     {
         $technologies = Technology::all();
-        return view("technologies.index", compact("technologies"));
+
+        return view('technologies.index', compact('technologies'));
     }
 
     /**
@@ -23,7 +24,7 @@ class TechnologyController extends Controller
      */
     public function create()
     {
-        return view("technologies.create");
+        return view('technologies.create');
     }
 
     /**
@@ -32,12 +33,13 @@ class TechnologyController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $newTechnology = new Technology();
-        $newTechnology->name = $data["name"];
-        $newTechnology->logo = $data["logo"];
-        $newTechnology->description = $data["description"];
+        $newTechnology = new Technology;
+        $newTechnology->name = $data['name'];
+        $newTechnology->logo = $data['logo'];
+        $newTechnology->description = $data['description'];
         $newTechnology->save();
-        return redirect()->route("technologies.show", $newTechnology->id);
+
+        return redirect()->route('technologies.show', $newTechnology->id);
     }
 
     /**
@@ -45,7 +47,7 @@ class TechnologyController extends Controller
      */
     public function show(Technology $technology)
     {
-        return view("technologies.show", compact("technology"));
+        return view('technologies.show', compact('technology'));
     }
 
     /**
@@ -53,7 +55,7 @@ class TechnologyController extends Controller
      */
     public function edit(Technology $technology)
     {
-        return view("technologies.edit", compact("technology"));
+        return view('technologies.edit', compact('technology'));
     }
 
     /**
@@ -62,11 +64,12 @@ class TechnologyController extends Controller
     public function update(Request $request, Technology $technology)
     {
         $data = $request->all();
-        $technology->name = $data["name"];
-        $technology->logo = $data["logo"];
-        $technology->description = $data["description"];
+        $technology->name = $data['name'];
+        $technology->logo = $data['logo'];
+        $technology->description = $data['description'];
         $technology->update();
-        return redirect()->route("technologies.show", $technology->id);
+
+        return redirect()->route('technologies.show', $technology->id);
     }
 
     /**
@@ -78,6 +81,7 @@ class TechnologyController extends Controller
             ->where('technology_id', $technology->id)
             ->delete();
         $technology->delete();
-        return redirect()->route("technologies.index");
+
+        return redirect()->route('technologies.index');
     }
 }

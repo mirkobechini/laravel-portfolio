@@ -15,7 +15,8 @@ class TypeController extends Controller
     public function index()
     {
         $types = Type::all();
-        return view("types.index", compact("types"));
+
+        return view('types.index', compact('types'));
     }
 
     /**
@@ -23,7 +24,7 @@ class TypeController extends Controller
      */
     public function create()
     {
-        return view("types.create");
+        return view('types.create');
     }
 
     /**
@@ -32,11 +33,12 @@ class TypeController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
-        $newType = new Type();
+        $newType = new Type;
         $newType->name = $data['name'];
         $newType->description = $data['description'];
         $newType->save();
-        return redirect()->route("types.index");
+
+        return redirect()->route('types.index');
     }
 
     /**
@@ -44,7 +46,7 @@ class TypeController extends Controller
      */
     public function show(Type $type)
     {
-        return view("types.show", compact("type"));
+        return view('types.show', compact('type'));
     }
 
     /**
@@ -52,7 +54,7 @@ class TypeController extends Controller
      */
     public function edit(Type $type)
     {
-        return view("types.edit", compact("type"));
+        return view('types.edit', compact('type'));
     }
 
     /**
@@ -64,7 +66,8 @@ class TypeController extends Controller
         $type->name = $data['name'];
         $type->description = $data['description'];
         $type->update();
-        return redirect()->route("types.show", $type->id);
+
+        return redirect()->route('types.show', $type->id);
     }
 
     /**
@@ -76,6 +79,7 @@ class TypeController extends Controller
             ->where('type_id', $type->id)
             ->update(['type_id' => Type::first()->id]);
         $type->delete();
-        return redirect()->route("types.index");
+
+        return redirect()->route('types.index');
     }
 }

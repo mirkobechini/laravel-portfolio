@@ -3,9 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Project;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
+use Illuminate\Database\Seeder;
 
 class ProjectsTableSeeder extends Seeder
 {
@@ -14,8 +13,8 @@ class ProjectsTableSeeder extends Seeder
      */
     public function run(Faker $faker): void
     {
-        for($i=0; $i<10; $i++){
-            $newProject = new Project();
+        for ($i = 0; $i < 10; $i++) {
+            $newProject = new Project;
             $newProject->title = $faker->sentence(3);
             $newProject->customer = $faker->company();
             $newProject->description = $faker->paragraphs(3, true);

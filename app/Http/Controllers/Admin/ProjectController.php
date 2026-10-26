@@ -16,7 +16,8 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
-        return view("projects.index", compact("projects"));
+
+        return view('projects.index', compact('projects'));
     }
 
     /**
@@ -26,7 +27,8 @@ class ProjectController extends Controller
     {
         $types = Type::all();
         $technologies = Technology::all();
-        return view("projects.create", compact("types", "technologies"));
+
+        return view('projects.create', compact('types', 'technologies'));
     }
 
     /**
@@ -36,20 +38,21 @@ class ProjectController extends Controller
     {
 
         $data = $request->all();
-        $newProject = new Project();
-        $newProject->title = $data["title"];
-        $newProject->customer = $data["customer"];
-        $newProject->cover_image = $data["cover_image"];
-        $newProject->description = $data["description"];
-        $newProject->type_id = $data["type_id"];
+        $newProject = new Project;
+        $newProject->title = $data['title'];
+        $newProject->customer = $data['customer'];
+        $newProject->cover_image = $data['cover_image'];
+        $newProject->description = $data['description'];
+        $newProject->type_id = $data['type_id'];
         $newProject->save();
-        if ($request->has("technologies")) {
+        if ($request->has('technologies')) {
 
             $newProject->technologies()->sync($data['technologies']);
         } else {
             $newProject->technologies()->detach();
         }
-        return redirect()->route("projects.show", $newProject->id);
+
+        return redirect()->route('projects.show', $newProject->id);
     }
 
     /**
@@ -57,7 +60,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        return view("projects.show", compact("project"));
+        return view('projects.show', compact('project'));
     }
 
     /**
@@ -67,7 +70,8 @@ class ProjectController extends Controller
     {
         $types = Type::all();
         $technologies = Technology::all();
-        return view("projects.edit", compact("project", "types", "technologies"));
+
+        return view('projects.edit', compact('project', 'types', 'technologies'));
     }
 
     /**
@@ -76,18 +80,19 @@ class ProjectController extends Controller
     public function update(Request $request, Project $project)
     {
         $data = $request->all();
-        $project->title = $data["title"];
-        $project->customer = $data["customer"];
-        $project->cover_image = $data["cover_image"];
-        $project->description = $data["description"];
-        $project->type_id = $data["type_id"];
+        $project->title = $data['title'];
+        $project->customer = $data['customer'];
+        $project->cover_image = $data['cover_image'];
+        $project->description = $data['description'];
+        $project->type_id = $data['type_id'];
         $project->update();
-        if ($request->has("technologies")) {
+        if ($request->has('technologies')) {
             $project->technologies()->sync($data['technologies']);
         } else {
             $project->technologies()->detach();
         }
-        return redirect()->route("projects.show", $project->id);
+
+        return redirect()->route('projects.show', $project->id);
     }
 
     /**
@@ -96,6 +101,7 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         $project->delete();
-        return redirect()->route("projects.index");
+
+        return redirect()->route('projects.index');
     }
 }

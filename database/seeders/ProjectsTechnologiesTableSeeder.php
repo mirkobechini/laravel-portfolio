@@ -4,9 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\Project;
 use App\Models\Technology;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
+use Illuminate\Database\Seeder;
 
 class ProjectsTechnologiesTableSeeder extends Seeder
 {
